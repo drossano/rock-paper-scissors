@@ -1,10 +1,51 @@
+// Declare rockValue, paperValue, scissorsValue, computerValue, and playerValue
 let rockValue;
 let paperValue;
 let scissorsValue;
 let computerValue;
-let playerValue
-function computerPlay() {
-    let computerSelect;
-    console.log(computerSelect);
+let playerValue;
 
+/* computerPlay randomly selects number from 1-3 (0-2???)
+    If 1 
+        then computer picks Rock
+        assign values such that scissors<rock<paper
+        computer gets assigned its choice's value
+        
+    Repeat for paper and scissors*/
+function computerPlay(){
+    let computerSelectString;
+    let computerSelect = Math.floor(Math.random()*3);
+    if (computerSelect == 0) {
+        computerSelectString = "Rock";
+        scissorsValue = 1;
+        rockValue = 2;
+        paperValue = 3;
+        computerSelect = rockValue;
+    }else if (computerSelect == 1) {
+        computerSelectString = "Paper";
+        rockValue = 1;
+        paperValue = 2;
+        scissorsValue = 3;
+        computerSelect = paperValue;
+    }else if (computerSelect ==2) {
+        computerSelectString = "Scissors"
+        paperValue = 1;
+        scissorsValue = 2;
+        rockValue = 3;
+        computerSelect = scissorsValue;
+    }
 }
+
+//Prompt player to pick rock paper or scissors 
+    //Assign associated value with players choice
+
+/*Compare player and computer choices
+    If player> computer
+        hen player wins
+    If computer>player
+        then computer wins
+    If computer==player
+        Draw*/
+
+//Repeat 5 times and track score
+        

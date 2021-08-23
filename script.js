@@ -14,7 +14,7 @@ let playerSelect;
     Repeat for paper and scissors*/
 function computerPlay(){
     
-    let computerSelect = Math.floor(Math.random()*3);
+    computerSelect = Math.floor(Math.random()*3);
     if (computerSelect == 0) { //Rock
         scissorsValue = 1;
         rockValue = 2;
@@ -31,7 +31,6 @@ function computerPlay(){
         rockValue = 3;
         computerSelect = scissorsValue;
     }
-    return rockValue;
 }
 
 //Prompt player to pick rock paper or scissors 
@@ -45,7 +44,6 @@ function playerChoice() {
     } else if (playerSelectString.toLowerCase() == "scissors") {
         playerSelect = scissorsValue;
     }
-    return playerSelect;
 }
 /*Compare player and computer choices
     If player> computer
@@ -54,6 +52,18 @@ function playerChoice() {
         then computer wins
     If computer==player
         Draw*/
+function rps() { 
+        computerPlay();
+        playerChoice();
+        if (playerSelect > computerSelect) {
+            console.log("You win!");
+        } else if (playerSelect < computerSelect) {
+            console.log("You lose!");
+        } else {
+            console.log("It's a draw!");
+        }
+}
 
+rps();
 //Repeat 5 times and track score
         

@@ -16,13 +16,12 @@ function computerPlay(){
     let computerSelection
     let randomNumber = Math.floor(Math.random()*3);
     if (randomNumber == 0) { 
-        computerSelection = "rock";
+        return computerSelection = "rock";
     }else if (randomNumber == 1) { 
-        computerSelection = "paper";
+        return computerSelection = "paper";
     }else if (randomNumber ==2) { 
-        computerSelection = "scissors";
+        return computerSelection = "scissors";
     }
-    return computerSelection;
 }
 
 

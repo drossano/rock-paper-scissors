@@ -44,6 +44,14 @@ function rockPaperScissors(computerSelection,playerSelection) {
     }
 }
 
+function game() {
+    const playerSelection = prompt("You're challenged to a game of Rock Paper Scissors! Enter \"Rock\" \"Paper\" or \"Scissors\" to play!");
+    const computerSelection = computerPlay();
+    console.log(rockPaperScissors(computerSelection,playerSelection));
+}
+
+game();
+
 //Prompt player to pick rock paper or scissors 
     //Assign associated value with players choice
 /* function playerChoice() {

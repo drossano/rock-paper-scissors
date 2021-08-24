@@ -28,17 +28,17 @@ function computerPlay(){
 
 
 function rockPaperScissors(computerSelection,playerSelection) {
-    if (computerSelection == "rock" && playerSelection == "scissors"){
+    if (computerSelection == "rock" && playerSelection.toLowerCase() == "scissors"){
         return "Rock breaks scissors, you lose!";
-    }else if (computerSelection == "rock" && playerSelection == "paper"){
+    }else if (computerSelection == "rock" && playerSelection.toLowerCase() == "paper"){
         return "Paper covers rock, you win!";
-    }else if (computerSelection == "paper" && playerSelection == "rock"){
+    }else if (computerSelection == "paper" && playerSelection.toLowerCase() == "rock"){
         return "Paper covers rock, you lose!";
-    }else if (computerSelection == "paper" && playerSelection =="scissors"){
+    }else if (computerSelection == "paper" && playerSelection.toLowerCase() =="scissors"){
         return "Scissors cut paper, you win!";
-    }else if (computerSelection == "scissors" && playerSelection == "paper"){
+    }else if (computerSelection == "scissors" && playerSelection.toLowerCase() == "paper"){
         return "Scissors cut paper, you lose!";
-    }else if (computerSelection == "scissors" && playerSelection == "rock"){
+    }else if (computerSelection == "scissors" && playerSelection.toLowerCase() == "rock"){
         return "Rock breaks scissors, you win!";
     }else {
         return "Draw!";

@@ -1,10 +1,10 @@
 // Declare rockValue, paperValue, scissorsValue, computerValue, and playerValue
-let rockValue;
+/* let rockValue;
 let paperValue;
 let scissorsValue;
-let computerSelect;
+let randomNumber;
 let playerSelect;
-
+ */
 /* computerPlay randomly selects number from 1-3 (0-2???)
     If 1 
         then computer picks Rock
@@ -13,29 +13,41 @@ let playerSelect;
         
     Repeat for paper and scissors*/
 function computerPlay(){
-    
-    computerSelect = Math.floor(Math.random()*3);
-    if (computerSelect == 0) { //Rock
-        scissorsValue = 1;
-        rockValue = 2;
-        paperValue = 3;
-        computerSelect = rockValue;
-    }else if (computerSelect == 1) { //Paper
-        rockValue = 1;
-        paperValue = 2;
-        scissorsValue = 3;
-        computerSelect = paperValue;
-    }else if (computerSelect ==2) { //Scissors
-        paperValue = 1;
-        scissorsValue = 2;
-        rockValue = 3;
-        computerSelect = scissorsValue;
+    let computerSelection
+    let randomNumber = Math.floor(Math.random()*3);
+    if (randomNumber == 0) { 
+        computerSelection = "rock";
+    }else if (randomNumber == 1) { 
+        computerSelection = "paper";
+    }else if (randomNumber ==2) { 
+        computerSelection = "scissors";
+    }
+    return computerSelection;
+}
+
+
+
+function rockPaperScissors(computerSelection,playerSelection) {
+    if (computerSelection == "rock" && playerSelection == "scissors"){
+        return "Rock breaks scissors, you lose!";
+    }else if (computerSelection == "rock" && playerSelection == "paper"){
+        return "Paper covers rock, you win!";
+    }else if (computerSelection == "paper" && playerSelection == "rock"){
+        return "Paper covers rock, you lose!";
+    }else if (computerSelection == "paper" && playerSelection =="scissors"){
+        return "Scissors cut paper, you win!";
+    }else if (computerSelection == "scissors" && playerSelection == "paper"){
+        return "Scissors cut paper, you lose!";
+    }else if (computerSelection == "scissors" && playerSelection == "rock"){
+        return "Rock breaks scissors, you win!";
+    }else {
+        return "Draw!";
     }
 }
 
 //Prompt player to pick rock paper or scissors 
     //Assign associated value with players choice
-function playerChoice() {
+/* function playerChoice() {
     const playerSelectString = prompt("You're challenged to a game of Rock Paper Scissors! Enter \"Rock\" \"Paper\" or \"Scissors\" to play!")
     if (playerSelectString.toLowerCase() == "rock") {
         playerSelect = rockValue;
@@ -44,7 +56,7 @@ function playerChoice() {
     } else if (playerSelectString.toLowerCase() == "scissors") {
         playerSelect = scissorsValue;
     }
-}
+} */
 /*Compare player and computer choices
     If player> computer
         hen player wins
@@ -52,18 +64,18 @@ function playerChoice() {
         then computer wins
     If computer==player
         Draw*/
-function rps() { 
+/* function rps() { 
         computerPlay();
         playerChoice();
-        if (playerSelect > computerSelect) {
+        if (playerSelect > randomNumber) {
             console.log("You win!");
-        } else if (playerSelect < computerSelect) {
+        } else if (playerSelect < randomNumber) {
             console.log("You lose!");
         } else {
             console.log("It's a draw!");
         }
-}
+} */
 
-rps();
+// rps();
 //Repeat 5 times and track score
         

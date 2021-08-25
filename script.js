@@ -1,18 +1,4 @@
-// Declare rockValue, paperValue, scissorsValue, computerValue, and playerValue
-/* let rockValue;
-let paperValue;
-let scissorsValue;
-let randomNumber;
-let playerSelect;
- */
-/* computerPlay randomly selects number from 1-3 (0-2???)
-    If 1 
-        then computer picks Rock
-        assign values such that scissors<rock<paper
-        computer gets assigned its choice's value
-        
-    Repeat for paper and scissors*/
-function computerPlay(){
+function computerPlay(){ //Computer randomly selects rock,paper or scissors
     let computerSelection
     let randomNumber = Math.floor(Math.random()*3);
     if (randomNumber == 0) { 
@@ -24,9 +10,7 @@ function computerPlay(){
     }
 }
 
-
-
-function rockPaperScissors(computerSelection,playerSelection) {
+function rockPaperScissors(computerSelection,playerSelection) { //Compares computer and player selections to determine who wins
     if (computerSelection == "rock" && playerSelection.toLowerCase() == "scissors"){
         return "Rock breaks scissors, you lose!";
     }else if (computerSelection == "rock" && playerSelection.toLowerCase() == "paper"){
@@ -49,16 +33,16 @@ function game() {
     let wins = 0;
     let losses = 0;
     let  draws = 0;
-    for (let games = 1; games <6; games ++){
+    for (let games = 1; games <6; games ++){//Play 5 games
         let playerSelection= "";
-        while (playerSelection.toLowerCase() != "rock" && playerSelection.toLowerCase() !=  "paper" && playerSelection.toLowerCase() != "scissors"){
+        while (playerSelection.toLowerCase() != "rock" && playerSelection.toLowerCase() !=  "paper" && playerSelection.toLowerCase() != "scissors"){//Keeps prompting player until they enter a correct choice
             console.log(playerSelection);
             playerSelection = prompt("You're challenged to a game of Rock Paper Scissors! Enter \"Rock\" \"Paper\" or \"Scissors\" to play!");
         }
         const computerSelection = computerPlay();
         message = rockPaperScissors(computerSelection,playerSelection);
         console.log(message);
-        if (message.includes("win")){
+        if (message.includes("win")){ //tracks wins
             wins += 1;
             console.log(`Game ${games}\nWins: ${wins} Losses: ${losses} Draws: ${draws}`);
         }else if (message.includes("lose")){
@@ -73,38 +57,3 @@ function game() {
 
 game();
 
-
-//Prompt player to pick rock paper or scissors 
-    //Assign associated value with players choice
-/* function playerChoice() {
-    const playerSelectString = prompt("You're challenged to a game of Rock Paper Scissors! Enter \"Rock\" \"Paper\" or \"Scissors\" to play!")
-    if (playerSelectString.toLowerCase() == "rock") {
-        playerSelect = rockValue;
-    } else if (playerSelectString.toLowerCase() == "paper") {
-        playerSelect = paperValue;
-    } else if (playerSelectString.toLowerCase() == "scissors") {
-        playerSelect = scissorsValue;
-    }
-} */
-/*Compare player and computer choices
-    If player> computer
-        hen player wins
-    If computer>player
-        then computer wins
-    If computer==player
-        Draw*/
-/* function rps() { 
-        computerPlay();
-        playerChoice();
-        if (playerSelect > randomNumber) {
-            console.log("You win!");
-        } else if (playerSelect < randomNumber) {
-            console.log("You lose!");
-        } else {
-            console.log("It's a draw!");
-        }
-} */
-
-// rps();
-//Repeat 5 times and track score
-        

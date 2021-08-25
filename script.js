@@ -36,8 +36,8 @@ function game() {
     for (let games = 1; games <6; games ++){//Play 5 games
         let playerSelection= "";
         while (playerSelection.toLowerCase() != "rock" && playerSelection.toLowerCase() !=  "paper" && playerSelection.toLowerCase() != "scissors"){//Keeps prompting player until they enter a correct choice
-            console.log(playerSelection);
             playerSelection = prompt("You're challenged to a game of Rock Paper Scissors! Enter \"Rock\" \"Paper\" or \"Scissors\" to play!");
+            console.log(playerSelection);
         }
         const computerSelection = computerPlay();
         message = rockPaperScissors(computerSelection,playerSelection);

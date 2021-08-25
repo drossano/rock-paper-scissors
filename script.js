@@ -39,7 +39,7 @@ function rockPaperScissors(computerSelection,playerSelection) {
         return "Scissors cut paper, you lose!";
     }else if (computerSelection == "scissors" && playerSelection.toLowerCase() == "rock"){
         return "Rock breaks scissors, you win!";
-    }else {
+    }else if (computerSelection == playerSelection.toLowerCase()) {
         return "Draw!";
     }
 }
@@ -49,23 +49,26 @@ function game() {
     let wins = 0;
     let losses = 0;
     let  draws = 0;
-    const playerSelection = prompt("You're challenged to a game of Rock Paper Scissors! Enter \"Rock\" \"Paper\" or \"Scissors\" to play!");
-    const computerSelection = computerPlay();
-    message = rockPaperScissors(computerSelection,playerSelection);
-    console.log(message);
-    if (message.includes("win")){
-        wins += 1;
-        console.log(`Wins: ${wins} Losses: ${losses} Draws: ${draws}`);
-    }else if (message.includes("lose")){
-        losses += 1;
-        console.log(`Wins: ${wins} Losses: ${losses} Draws: ${draws}`);
-    }else {
-        draws += 1;
-        console.log(`Wins: ${wins} Losses: ${losses} Draws: ${draws}`);
+    for (let games = 1; games <6; games ++){
+        const playerSelection = prompt("You're challenged to a game of Rock Paper Scissors! Enter \"Rock\" \"Paper\" or \"Scissors\" to play!");
+        const computerSelection = computerPlay();
+        message = rockPaperScissors(computerSelection,playerSelection);
+        console.log(message);
+        if (message.includes("win")){
+            wins += 1;
+            console.log(`Game ${games}\nWins: ${wins} Losses: ${losses} Draws: ${draws}`);
+        }else if (message.includes("lose")){
+            losses += 1;
+            console.log(`Game ${games}\nWins: ${wins} Losses: ${losses} Draws: ${draws}`);
+        }else if (message.toLowerCase().includes("draw")){
+            draws += 1;
+            console.log(`Game ${games}\nWins: ${wins} Losses: ${losses} Draws: ${draws}`);
+        }
     }
 }
 
 game();
+
 
 //Prompt player to pick rock paper or scissors 
     //Assign associated value with players choice

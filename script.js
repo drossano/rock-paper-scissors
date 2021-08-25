@@ -10,7 +10,7 @@ function computerPlay(){ //Computer randomly selects rock,paper or scissors
     }
 }
 
-function rockPaperScissors(computerSelection,playerSelection) { //Compares computer and player selections to determine who wins
+function playRound(computerSelection,playerSelection) { //Compares computer and player selections to determine who wins
     if (computerSelection == "rock" && playerSelection.toLowerCase() == "scissors"){
         return "Rock breaks scissors, you lose!";
     }else if (computerSelection == "rock" && playerSelection.toLowerCase() == "paper"){
@@ -40,7 +40,7 @@ function game() {
             console.log(playerSelection);
         }
         const computerSelection = computerPlay();
-        message = rockPaperScissors(computerSelection,playerSelection);
+        message = playRound(computerSelection,playerSelection);
         console.log(message);
         if (message.includes("win")){ //tracks wins
             wins += 1;

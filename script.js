@@ -35,22 +35,24 @@ function game() {
     let  draws = 0;
     for (let games = 1; games <6; games ++){//Play 5 games
         let playerSelection= "";
+        console.log(`Game ${games}`);
         while (playerSelection.toLowerCase() != "rock" && playerSelection.toLowerCase() !=  "paper" && playerSelection.toLowerCase() != "scissors"){//Keeps prompting player until they enter a correct choice
             playerSelection = prompt("You're challenged to a game of Rock Paper Scissors! Enter \"Rock\" \"Paper\" or \"Scissors\" to play!");
-            console.log(playerSelection);
+            console.log(`You choose ${playerSelection}.`);
         }
         const computerSelection = computerPlay();
+        console.log(`The computer chooses ${computerSelection}`)
         message = playRound(computerSelection,playerSelection);
         console.log(message);
         if (message.includes("win")){ //tracks wins
             wins += 1;
-            console.log(`Game ${games}\nWins: ${wins} Losses: ${losses} Draws: ${draws}`);
+            console.log(`Wins: ${wins} Losses: ${losses} Draws: ${draws}`);
         }else if (message.includes("lose")){
             losses += 1;
-            console.log(`Game ${games}\nWins: ${wins} Losses: ${losses} Draws: ${draws}`);
+            console.log(`Wins: ${wins} Losses: ${losses} Draws: ${draws}`);
         }else if (message.toLowerCase().includes("draw")){
             draws += 1;
-            console.log(`Game ${games}\nWins: ${wins} Losses: ${losses} Draws: ${draws}`);
+            console.log(`Wins: ${wins} Losses: ${losses} Draws: ${draws}`);
         }
     }
 }

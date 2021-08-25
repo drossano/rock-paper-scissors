@@ -45,9 +45,24 @@ function rockPaperScissors(computerSelection,playerSelection) {
 }
 
 function game() {
+    let message;
+    let wins = 0;
+    let losses = 0;
+    let  draws = 0;
     const playerSelection = prompt("You're challenged to a game of Rock Paper Scissors! Enter \"Rock\" \"Paper\" or \"Scissors\" to play!");
     const computerSelection = computerPlay();
-    console.log(rockPaperScissors(computerSelection,playerSelection));
+    message = rockPaperScissors(computerSelection,playerSelection);
+    console.log(message);
+    if (message.includes("win")){
+        wins += 1;
+        console.log(`Wins: ${wins} Losses: ${losses} Draws: ${draws}`);
+    }else if (message.includes("lose")){
+        losses += 1;
+        console.log(`Wins: ${wins} Losses: ${losses} Draws: ${draws}`);
+    }else {
+        draws += 1;
+        console.log(`Wins: ${wins} Losses: ${losses} Draws: ${draws}`);
+    }
 }
 
 game();

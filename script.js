@@ -50,7 +50,11 @@ function game() {
     let losses = 0;
     let  draws = 0;
     for (let games = 1; games <6; games ++){
-        const playerSelection = prompt("You're challenged to a game of Rock Paper Scissors! Enter \"Rock\" \"Paper\" or \"Scissors\" to play!");
+        let playerSelection= "";
+        while (playerSelection.toLowerCase() != "rock" && playerSelection.toLowerCase() !=  "paper" && playerSelection.toLowerCase() != "scissors"){
+            console.log(playerSelection);
+            playerSelection = prompt("You're challenged to a game of Rock Paper Scissors! Enter \"Rock\" \"Paper\" or \"Scissors\" to play!");
+        }
         const computerSelection = computerPlay();
         message = rockPaperScissors(computerSelection,playerSelection);
         console.log(message);

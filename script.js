@@ -27,12 +27,16 @@ function playRound(computerSelection,playerSelection) { //Compares computer and 
         return "Draw!";
     }
 }
-
+const container = document.querySelector('#results')
+const results = document.createElement('p');
 const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
-    button.addEventListener('click', ()=> {console.log(playRound(computerPlay(),button.id))
+    button.addEventListener('click', ()=> 
+    {results.textContent=playRound(computerPlay(),button.id)
+        container.appendChild(results);
     });
 });
+
 
 /* function game() {
     let message;

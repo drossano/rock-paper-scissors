@@ -28,7 +28,13 @@ function playRound(computerSelection,playerSelection) { //Compares computer and 
     }
 }
 
-function game() {
+const buttons = document.querySelectorAll('button');
+buttons.forEach((button) => {
+    button.addEventListener('click', ()=> {console.log(playRound(computerPlay(),button.id))
+    });
+});
+
+/* function game() {
     let message;
     let wins = 0;
     let losses = 0;
@@ -57,5 +63,5 @@ function game() {
     }
 }
 
-game();
+game(); */
 

@@ -28,12 +28,26 @@ function playRound(computerSelection,playerSelection) { //Compares computer and 
     }
 }
 const container = document.querySelector('#results')
+let playerWins = 0;
+let computerWins = 0;
+const playerWinTracker = document.querySelector('#player-wins');
+const computerWinTracker = document.querySelector('#computer-wins');
+playerWinTracker.textContent=playerWins;
+computerWinTracker.textContent=computerWins;
 const results = document.createElement('p');
 const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
-    button.addEventListener('click', ()=> 
-    {results.textContent=playRound(computerPlay(),button.id)
+    button.addEventListener('click', ()=> {
+        let message = playRound(computerPlay(),button.id);
+        results.textContent = message;
         container.appendChild(results);
+        if (message.includes("win")){ //tracks wins
+            playerWins += 1;
+            playerWinTracker.textContent=playerWins;
+        }else if (message.includes("lose")) {
+            computerWins += 1;
+            computerWinTracker.textContent=computerWins;
+        }
     });
 });
 

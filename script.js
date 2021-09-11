@@ -38,14 +38,32 @@ const results = document.querySelector('#results')
 const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
     button.addEventListener('click', ()=> {
-        let message = playRound(computerPlay(),button.id);
-        results.textContent = message;
-        if (message.includes("win")){ //tracks wins
-            playerWins += 1;
-            playerWinTracker.textContent=playerWins;
-        }else if (message.includes("lose")) {
-            computerWins += 1;
-            computerWinTracker.textContent=computerWins;
+        if (playerWins < 5 && computerWins < 5){
+            let message = playRound(computerPlay(),button.id);
+            results.textContent = message;
+            if (message.includes("win")){ //tracks wins
+                playerWins += 1;
+                playerWinTracker.textContent=playerWins;
+                if (playerWins == 5){
+                    message = "You won 5 times, you're the champion! Refresh the page to play again."
+                    results.textContent = message;
+                } else{
+                return;
+            };
+            }else if (message.includes("lose")) {
+                computerWins += 1;
+                computerWinTracker.textContent=computerWins;
+                if (computerWins == 5) {
+                    message = "The computer won 5 times, refresh to try again!"  
+                    results.textContent = message;
+                } else {
+                    return;
+                }
+            } else {
+                return;
+            }
+        } else {
+            return;
         }
     });
 });

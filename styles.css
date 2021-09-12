@@ -21,3 +21,18 @@ body{
 p {
     text-align: center;
 }
+
+h1 {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+button {
+    font-size: 30px;
+    width: 40px;
+    height: 40px;
+}
+
+#paper {
+    margin: 0 10px;
+}

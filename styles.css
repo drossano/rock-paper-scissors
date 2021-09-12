@@ -1,3 +1,23 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
+    margin: 0 auto;
+}
+
+#game {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+#middle-container{
+    width:  700px;
+}
+
+#buttons {
+    text-align: center;
+}
+
+p {
+    text-align: center;
 }
